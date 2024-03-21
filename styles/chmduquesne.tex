@@ -1,0 +1,116 @@
+% Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+% Copyright 2014 Mark Szepieniec <http://github.com/mszep>
+% 
+% ConText style for making a resume with pandoc. Inspired by moderncv.
+% 
+% This CSS document is delivered to you under the CC BY-SA 3.0 License.
+% https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+
+\startmode[*mkii]
+  \enableregime[utf-8]  
+  \setupcolors[state=start]
+\stopmode
+$if(mainlang)$
+\mainlanguage[$mainlang$]
+$endif$
+
+\setupcolor[hex]
+\definecolor[titlegrey][h=757575]
+\definecolor[sectioncolor][h=397249]
+\definecolor[rulecolor][h=9cb770]
+
+% Enable hyperlinks
+\setupinteraction[state=start, color=sectioncolor]
+
+\setuppapersize [$if(papersize)$$papersize$$else$letter$endif$][$if(papersize)$$papersize$$else$letter$endif$]
+\setuplayout    [width=middle, height=middle,
+                 backspace=20mm, cutspace=0mm,
+                 topspace=10mm, bottomspace=10mm,
+                 header=0mm, footer=5em]
+
+%\setuppagenumbering[location={footer,center}]
+
+\setupbodyfont[11pt, helvetica]
+
+\setupwhitespace[medium]
+
+\setupblackrules[width=31mm, color=rulecolor]
+
+\define\ContactInfoLine {
+       \bTABLE[width=\textwidth, frame=off]
+           \setupTABLE[each][color=titlegrey]
+           \setupTABLE[column][1][width=0.35\textwidth, align=right]
+           \setupTABLE[column][3][width=0.35\textwidth, align=left]
+           \setupTABLE[column][2][width=0.3\textwidth, align=middle]
+
+           \bTR
+               \bTD $Address$ \eTD
+               \bTD $Email$ \eTD
+               \bTD $Mobil$ \eTD
+           \eTR
+       \eTABLE
+}
+
+\define\SetupContactInfo{
+    \setupfooter[]
+    \setupfootertexts[$Email$]
+    \setupfootertexts[$Address$][$Mobil$]
+}
+
+\def\InsertImageAtSection#1{
+    \doifsamestring\currentstructuretitle{#1}{
+        \placefigure[right, none]{}{\externalfigure[image][width=5cm]}
+    }    
+}
+\setuphead[section]      [style=\tfd\bf, color=titlegrey, align=middle]
+\setuphead[subsection]   [style=\tfb\bf, color=sectioncolor, align=right,
+                          before={\leavevmode\blackrule\hspace}, after={
+\InsertImageAtSection{Profil}
+}]
+\setuphead[subsubsection][style=\bf]
+
+$if(number-sections)$
+$else$
+\setuphead[chapter, section, subsection, subsubsection][number=no]
+$endif$
+
+%\setupdescriptions[width=10mm]
+
+\definedescription
+  [description]
+  [headstyle=bold, style=normal,
+   location=hanging, width=18mm, distance=14mm, margin=0cm]
+
+\setupitemize[autointro, packed]    % prevent orphan list intro
+\setupitemize[indentnext=no]
+
+\defineitemgroup[enumerate]
+\setupenumerate[each][fit][itemalign=left,distance=.5em,style={\feature[+][default:tnum]}]
+
+\setupfloat[figure][default={here,nonumber}]
+\setupfloat[table][default={here,nonumber}]
+
+
+\setupthinrules[width=15em] % width of horizontal rules
+
+\setupdelimitedtext
+  [blockquote]
+  [before={\setupalign[middle]},
+   indentnext=no,
+  ]
+%\setupheader[color=titlegrey]
+
+\definelayer
+  [logo]
+  [preset=righttop, width=\paperwidth, height=\paperheight]
+
+\setlayer
+  [logo]
+  {\externalfigure[logo.png][width=5cm]}
+\setupbackgrounds[page][background=logo]
+
+\SetupContactInfo
+
+\starttext
+$body$
+\stoptext

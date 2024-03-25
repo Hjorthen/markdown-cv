@@ -26,7 +26,8 @@ Erhvervserfaring
 **Konsulent - Netlight Consulting** 2021 - 2023      
 Som konsulent har jeg hjulpet kunder med forskellige problemløsninger. Gennem agile arbejdsprocesser har jeg arbejdet med AWS Cloud, Github Actions, docker, Linux, databaser, C# og Kotlin i rollerne som data engineer, backend engineer, devops og cloud architect. Mine kompetancer indenfor IT-sikkerhed understøttet mit arbejde og sørget for at jeg har kunne hjælpe kunden med at opnå den bedste sikkerhed for deres tilgængelige ressourcer. Som konsulent kunne jeg se projekter med friske øjne og har derfor været i tæt dialog med både stakeholders og project owners.
 
-**Kandidat Projekt - AddiFab** 2021
+**Kandidat Projekt - AddiFab** 2021  
+Jeg skrev mit kandidat projekt hos firmaet AddiFab som skulle bruge en løsning som kunne levere softwareopdateringer til deres udstyr på en sikker måde. Jeg designede en arkitektur som benyttede digitale signaturer som kunne bruges til verificering af opdateringerne. Løsningen blev leveret som en prototype jeg havde bygget ved brug af test-driven-development(TDD), C#, JSON og SQL. 
 
 **Hjælpelærer - Introduktion til C++ på DTU** 2018 - 2020    
 Som hjælpelærer formidlede jeg teknisk viden til dansk og engelsksprogede studerende hvor mange ikke havde en teknisk baggrund. 

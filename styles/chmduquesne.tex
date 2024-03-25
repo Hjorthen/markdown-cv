@@ -16,8 +16,8 @@ $endif$
 
 \setupcolor[hex]
 \definecolor[titlegrey][h=757575]
-\definecolor[sectioncolor][h=397249]
-\definecolor[rulecolor][h=9cb770]
+\definecolor[sectioncolor][h=036280]
+\definecolor[rulecolor][h=378BA4]
 
 % Enable hyperlinks
 \setupinteraction[state=start, color=sectioncolor]
@@ -59,7 +59,7 @@ $endif$
 
 \def\InsertImageAtSection#1{
     \doifsamestring\currentstructuretitle{#1}{
-        \placefigure[right, none]{}{\externalfigure[image][width=5cm]}
+        \placefigure[right, none]{}{\externalfigure[images/selfie.png][height=6cm]}
     }    
 }
 \setuphead[section]      [style=\tfd\bf, color=titlegrey, align=middle]
@@ -106,7 +106,7 @@ $endif$
 
 \setlayer
   [logo]
-  {\externalfigure[logo.png][width=5cm]}
+  {\externalfigure[images/logo][width=5cm]}
 \setupbackgrounds[page][background=logo]
 
 \SetupContactInfo

@@ -5,6 +5,7 @@ Sebastian Hjorth
 Address: 'Råbroparken 42, 2765 Smørum'
 Email: sebastian@shjorth.dk
 Mobil: +4529929989
+portrait_image: images/selfie.png
 ---
 
 Profil

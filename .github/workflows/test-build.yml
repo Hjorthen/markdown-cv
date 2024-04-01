@@ -30,10 +30,14 @@ jobs:
       - name: build
         run: make pdf
       - name: publish
+        env:
+          RELEASE_BRANCH: release
         run: |
           echo "Publishing files"
           ls output ; cat output/*.log || true
-          git branch -f release
+          git checkout -B ${RELEASE_BRANCH}
           git add -f 'output/*.pdf'
+          git config user.email 'ci@shjorth.dk'
+          git config user.name 'CI Agent'
           git commit -m "Release"
-          git push -f origin release:release
+          git push -f origin ${RELEASE_BRANCH}:${RELEASE_BRANCH}

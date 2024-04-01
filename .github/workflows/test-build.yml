@@ -23,6 +23,6 @@ jobs:
       - name: publish
         run: |
           git branch -f release
-          git add -f output/*.pdf
+          git add -f 'output/*.pdf'
           git commit -m "Release"
           git push -f origin release:release

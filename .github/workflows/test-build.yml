@@ -19,7 +19,7 @@ jobs:
       - name: setup
         run: sudo apt install make pandoc context
       - name: build
-        run: make
+        run: make pdf
       - name: publish
         run: |
           git branch -f release

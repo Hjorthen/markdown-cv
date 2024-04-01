@@ -24,7 +24,7 @@ jobs:
       - name: publish
         run: |
           echo "Publishing files"
-          ls output/*.pdf
+          ls output ; cat output/*.log || true
           git branch -f release
           git add -f 'output/*.pdf'
           git commit -m "Release"

@@ -18,7 +18,7 @@ jobs:
             /var/cache/apt/archives
           restore-keys: buildfiles
       - name: setup
-        run: sudo apt install make pandoc context
+        run: sudo apt install make pandoc context lua-socket
       - name: build
         run: make pdf
       - name: publish

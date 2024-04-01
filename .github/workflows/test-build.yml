@@ -17,7 +17,7 @@ jobs:
             /var/cache/apt/archives
           restore-keys: buildfiles
       - name: setup
-        run: apt install make pandoc context
+        run: sudo apt install make pandoc context
       - name: build
         run: make
       - name: publish

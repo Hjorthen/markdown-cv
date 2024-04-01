@@ -10,8 +10,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Restore Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
+          save-always: true
           key: ${{ github.ref_name }}-buildfiles
           path: |
             /var/cache/apt/archives
@@ -22,6 +23,8 @@ jobs:
         run: make pdf
       - name: publish
         run: |
+          echo "Publishing files"
+          ls output/*.pdf
           git branch -f release
           git add -f 'output/*.pdf'
           git commit -m "Release"

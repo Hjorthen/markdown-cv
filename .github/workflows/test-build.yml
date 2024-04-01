@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   build-files:
-    runs-on: ubuntu-latest
+    runs-on: debian-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4

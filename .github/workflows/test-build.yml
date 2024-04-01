@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Restore Cache
+      - name: Restore Apt Cache
         uses: actions/cache@v4
         with:
           save-always: true
@@ -17,6 +17,14 @@ jobs:
           path: |
             /var/cache/apt/archives
           restore-keys: buildfiles
+      - name: Restore ConTex Cache
+        uses: actions/cache@v4
+        with:
+          save-always: true
+          key: ${{ github.ref_name }}-contextcache
+          path: |
+            /var/lib/texmf/luatex-cache
+          restore-keys: contextcache
       - name: setup
         run: sudo apt install make texlive pandoc context lua-socket
       - name: build

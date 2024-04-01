@@ -13,7 +13,7 @@ pdf: init
 			--from markdown --to context \
 			--variable papersize=A4 \
 			--output $(OUT_DIR)/$$FILE_NAME.tex $$f > /dev/null; \
-		mtxrun --path=$(OUT_DIR) --result=$$FILE_NAME.pdf --script context $$FILE_NAME.tex > $(OUT_DIR)/context_$$FILE_NAME.log 2>&1; \
+		echo 'R' | mtxrun --path=$(OUT_DIR) --result=$$FILE_NAME.pdf --script context --batchmode $$FILE_NAME.tex > $(OUT_DIR)/context_$$FILE_NAME.log 2>&1; \
 	done
 
 html: init

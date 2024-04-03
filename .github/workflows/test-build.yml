@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Enable tar writing to system files # Fix from https://github.com/actions/toolkit/issues/946
+        run: sudo chown root /bin/tar && sudo chmod u+s /bin/tar
       - name: Restore Apt Cache
         uses: actions/cache@v4
         with:

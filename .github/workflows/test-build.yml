@@ -17,7 +17,7 @@ jobs:
           save-always: true
           key: ${{ github.ref_name }}-buildfiles
           path: |
-            /var/cache/apt/archives
+            /var/cache/apt/archives/*.deb
           restore-keys: buildfiles
       - name: Restore ConTex Cache
         uses: actions/cache@v4

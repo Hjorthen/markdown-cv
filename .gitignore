@@ -1,0 +1,6 @@
+# Ignore tex files
+*.tex
+*.tuc
+
+*.log
+

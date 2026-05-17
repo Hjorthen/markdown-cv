@@ -68,13 +68,44 @@ $endif$
     $endif$
 }
 
+\usesymbols[mis]
+
+\def\NodeBox#1{
+        \hbox{
+           {\lower 2pt \hbox {\hskip 6pt \tfc \symbol[bullet] \hskip -6pt}}
+           \framed[loffset=4pt, roffset=4pt, location=depth, corner=round, background=color, backgroundcolor=white]{#1} 
+           \hskip -5.5pt
+           {\raise 2pt \hbox{ \txx \symbol[blacktriangle] }}
+        }
+}
+\define\MakeCompetencies{
+        \vskip 14pt
+        \hrule height 1pt
+        \vskip -12pt
+        \dontleavehmode\hbox to \hsize{%
+                \hfill
+                $for(competences)$ 
+                    \NodeBox{$it$}
+                    \hfill
+                $endfor$
+        }
+}
+
 
 \setuphead[title] [style=\tfb\bf, color=titlegrey, align=middle, number=no]
 \setuphead[section] [style=\tfb\bf, color=sectioncolor,align=right, number=no, before={
 	\leavevmode\blackrule\hspace
 },
+before={
+
+        \doifsamestring\currentstructuretitle{Profil}{
+                          \message { Inserting competences }
+                          \MakeCompetencies
+     }    
+},
 after={
      \InsertImageAtSection{Profil}
+
 }]
 \setuphead[subsection][style=\bf, number=no]
 

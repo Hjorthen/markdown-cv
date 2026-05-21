@@ -5,6 +5,13 @@ Why? Makes it easy to tailor your CV or maintain a CV in multiple languages.
 
 Also to be honest, I found it a lot more fun tweaking the Context style than using traditional text processers.
 
+
+```
+cv-content.md → pandoc → context → cv-content.pdf
+                  ↑
+          chmduquesne.tex
+```
+
 ## Features
 - [Markdown-metadata](https://pandoc.org/demo/example33/8.10-metadata-blocks.html) supported styling: Your personal details, photo and highlighted competences are all defined in the markdown file. There's no need to change the Context file!
 - Docker container running Context saves you having to install it on your own system

@@ -109,7 +109,11 @@ before={
         \doifsamestring\currentstructuretitle{Profil}{
                           \message { Inserting competences }
                           \MakeCompetencies
-     }    
+        }    
+        \doifsamestring\currentstructuretitle{Profile}{
+                          \message { Inserting competences }
+                          \MakeCompetencies
+        }    
 },
 after={
      \InsertImageAtSection{Profil}

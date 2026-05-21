@@ -20,9 +20,12 @@ $endif$
 \definecolor[titlegrey][base0]
 \definecolor[sectioncolor][base03]
 \definecolor[rulecolor][base02]
+\define\buildfooter{This CV was built in docker!, see: \url[cv-source]}
 
 % Enable hyperlinks
 \setupinteraction[state=start, color=sectioncolor]
+\useURL[github][github.com/Hjorthen]
+\useURL[cv-source][github.com/Hjorthen/markdown-cv]
 
 \setuppapersize [$if(papersize)$$papersize$$else$letter$endif$][$if(papersize)$$papersize$$else$letter$endif$]
 \setuplayout    [width=middle, height=middle,
@@ -46,7 +49,7 @@ $endif$
            \setupTABLE[column][2][width=0.3\textwidth, align=middle]
 
            \bTR
-               \bTD $Address$ \eTD
+               \bTD {\externalfigure[figures/GitHub_Invertocat_Black.svg][width=10pt] } \eTD
                \bTD $Email$ \eTD
                \bTD $Mobil$ \eTD
            \eTR
@@ -56,7 +59,12 @@ $endif$
 \define\SetupContactInfo{
     \setupfooter[]
     \setupfootertexts[$Email$]
-    \setupfootertexts[$Address$][$Mobil$]
+    \setupfootertexts[
+            \vtop{ 
+                    \hbox{ \externalfigure[figures/GitHub_Invertocat_Black.png][width=10pt] \url[github] } 
+                    \hbox{ \color[base01] { \tx \buildfooter  }} 
+            } 
+    ][$Mobil$]
 }
 
 \def\InsertImageAtSection#1{

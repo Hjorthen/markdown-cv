@@ -20,10 +20,10 @@ $endif$
 \definecolor[titlegrey][base0]
 \definecolor[sectioncolor][base03]
 \definecolor[rulecolor][base02]
-\define\buildfooter{This CV was built in docker!, see: \url[cv-source]}
+\define\buildfooter{This CV was \goto{built in docker!}[url(github.com/Hjorthen/markdown-cv)]}
 
 % Enable hyperlinks
-\setupinteraction[state=start, color=sectioncolor]
+\setupinteraction[state=start, color=, style=\underbar]
 \useURL[github][github.com/Hjorthen]
 \useURL[cv-source][github.com/Hjorthen/markdown-cv]
 
